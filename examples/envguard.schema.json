@@ -1,0 +1,43 @@
+{
+  "title": "Service Environment Variables",
+  "strict": true,
+  "variables": {
+    "NODE_ENV": {
+      "type": "enum",
+      "enum": ["development", "staging", "production"],
+      "required": true,
+      "default": "development",
+      "description": "Runtime environment profile"
+    },
+    "PORT": {
+      "type": "port",
+      "required": true,
+      "default": "3000",
+      "description": "TCP port bound by the HTTP server"
+    },
+    "PUBLIC_BASE_URL": {
+      "type": "url",
+      "required": true,
+      "example": "https://app.example.com",
+      "description": "Publicly reachable origin URL"
+    },
+    "SUPPORT_EMAIL": {
+      "type": "email",
+      "required": false,
+      "example": "support@example.com",
+      "description": "Contact email included in transactional alerts"
+    },
+    "JWT_SECRET": {
+      "type": "string",
+      "required": true,
+      "minLength": 32,
+      "secret": true,
+      "description": "HMAC secret used to sign session tokens"
+    },
+    "ENABLE_METRICS": {
+      "type": "boolean",
+      "default": "true",
+      "description": "Expose Prometheus metrics endpoint"
+    }
+  }
+}
