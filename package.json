@@ -1,0 +1,51 @@
+{
+  "name": "envguard-cli",
+  "version": "1.0.0",
+  "description": "Zero-dependency CLI and Node.js library to validate .env files against typed schemas, detect leaked secrets, diff configs safely, and generate documentation.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "bin": {
+    "envguard": "./bin/envguard.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check:example": "node ./bin/envguard.js docs --schema ./examples/envguard.schema.json"
+  },
+  "keywords": [
+    "env",
+    "dotenv",
+    "validation",
+    "secrets",
+    "security",
+    "cli",
+    "schema",
+    "ci",
+    "zero-dependency"
+  ],
+  "author": "quetaplays1999-art",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quetaplays1999-art/envguard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quetaplays1999-art/envguard/issues"
+  },
+  "homepage": "https://github.com/quetaplays1999-art/envguard#readme",
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
